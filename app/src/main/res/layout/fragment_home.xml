@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    >
+
+    <data>
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="lang"
+            type="String"
+
+            />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            >
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:titleEnabled="false"
+                app:layout_scrollFlags="scroll|enterAlways"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/gray7"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:background="@drawable/rounded_white"
+                            >
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_search"
+                                app:tint="@color/gray4"
+                                />
+                            <EditText
+                                android:id="@+id/edtSearch"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:paddingStart="5dp"
+                                android:paddingEnd="5dp"
+                                android:singleLine="true"
+                                android:background="@color/transparent"
+                                android:textSize="15sp"
+                                android:textColor="@color/black"
+                                android:hint="@string/search"
+                                android:imeOptions="actionSearch"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="5dp"
+                            >
+                            <FrameLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/rounded_white"
+                                android:layout_weight="1"
+                                >
+                                <Spinner
+                                    android:id="@+id/spinnerStock"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    app:backgroundTint="@color/black"
+                                    android:spinnerMode="dialog"
+                                    />
+                            </FrameLayout>
+
+                            <Space
+                                android:layout_width="8dp"
+                                android:layout_height="0dp"/>
+
+                            <FrameLayout
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/rounded_white"
+                                android:layout_weight="1"
+                                >
+                                <Spinner
+                                    android:id="@+id/spinnerCategory"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    app:backgroundTint="@color/black"
+                                    android:spinnerMode="dialog"
+                                    />
+                            </FrameLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:id="@+id/flType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/gray7"
+                        android:layout_marginTop="5dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        >
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recViewType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            />
+
+                        <ProgressBar
+                            android:id="@+id/progBarType"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"/>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/flBrand"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/gray7"
+                        android:layout_marginTop="5dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        >
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recViewBrand"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            />
+
+                        <ProgressBar
+                            android:id="@+id/progBarBrand"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"/>
+
+
+                    </FrameLayout>
+                </LinearLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            android:layout_marginTop="8dp"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recViewProducts"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+
+                />
+            <ProgressBar
+                android:id="@+id/progBarProduct"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                />
+            <TextView
+                android:id="@+id/tvNoData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:text="@string/no_data_to_show"
+                android:visibility="gone"
+                />
+        </FrameLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

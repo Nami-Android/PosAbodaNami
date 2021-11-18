@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="model"
+            type="com.app.posaboda.models.DeptTypeBrandModel" />
+    </data>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textColor="@{model.selected?@color/white:@color/black}"
+        android:layout_margin="5dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textSize="15sp"
+        android:background="@{model.selected?@drawable/rounded_primary:@drawable/rounded_strok_white}"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@{model.title}"
+        android:maxEms="10"
+        />
+</layout>

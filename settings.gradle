@@ -1,0 +1,2 @@
+rootProject.name = "PosAbodaNami"
+include ':app'
